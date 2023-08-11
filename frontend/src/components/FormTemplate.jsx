@@ -1,20 +1,7 @@
 import React, { useState } from 'react'
 import QuestionTemplate from './QuestionTemplate'
 
-const renderComponents = (components) => {
-    if (components.length === 0) {
-      return null;
-    }
-  
-    const [currentComponent, ...remainingComponents] = components;
-  
-    return (
-      <>
-        <currentComponent.type key={currentComponent.id} {...currentComponent.props} />
-        {renderComponents(remainingComponents)}
-      </>
-    );
-  };
+
 
 function FormTemplate() {
 
