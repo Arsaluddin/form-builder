@@ -1,26 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const FormTemplate = require('../models/FormTemplate');
+const Form = require('../models/FormTemplate');
 
-// Create a new form template
-router.post('/form-templates', async (req, res) => {
+// Create a new form
+router.post('/', async (req, res) => {
   try {
-    const formTemplate = await FormTemplate.create(req.body);
-    res.status(201).json(formTemplate);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    const { formName, questions } = req.body;
+    const newForm = new Form({
+      formName,
+      questions,
+    });
+    const savedForm = await newForm.save();
+    res.status(201).json(savedForm);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
   }
 });
 
-// Retrieve all form templates
-router.get('/form-templates', async (req, res) => {
+// Get all forms
+router.get('/', async (req, res) => {
   try {
-    const formTemplates = await FormTemplate.find();
-    res.status(200).json(formTemplates);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+    const forms = await Form.find();
+    res.status(200).json(forms);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
   }
 });
+
 
 module.exports = router;
 
