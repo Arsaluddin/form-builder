@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SimpleDragAndDrop() {
+function Category() {
   const [sourceItems, setSourceItems] = useState([]);
   const [targetContainers, setTargetContainers] = useState([]);
 
@@ -99,4 +99,4 @@ function SimpleDragAndDrop() {
   );
 }
 
-export default SimpleDragAndDrop;
+export default Category;
