@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+// key --> tFH50Qyb33Q7PVtw 
 
-mongoose.connect('mongodb://localhost:27017/your-database-name', {
+mongoose.connect('mongodb+srv://arsaluddin134:tFH50Qyb33Q7PVtw@cluster0.qrdtcpl.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

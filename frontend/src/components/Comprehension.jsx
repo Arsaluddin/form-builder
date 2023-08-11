@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ComprehensionBuilder() {
+function Comprehension() {
   const [comprehension, setComprehension] = useState('');
   const [questions, setQuestions] = useState([
     { questionText: '', options: [''] },
@@ -79,4 +79,4 @@ function ComprehensionBuilder() {
   );
 }
 
-export default ComprehensionBuilder;
+export default Comprehension;

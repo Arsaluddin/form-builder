@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function FillInTheBlank() {
+function Cloze() {
   const [sentence, setSentence] = useState('');
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -81,4 +81,4 @@ function FillInTheBlank() {
   );
 }
 
-export default FillInTheBlank;
+export default Cloze;

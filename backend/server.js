@@ -1,12 +1,12 @@
 const express = require("express")
-const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
+const bodyParser = require('body-parser')
 const app = express();
-const connectDB = require('./db/connect');
-const formTemplatesRouter = require('./routes/formTemplates');
+const formRoutes = require('./routes/formTemplates');
 
+app.use(bodyParser.json())
 app.use(express.json());
-app.use('/', formTemplatesRouter);
+app.use('/form', formRoutes);
 
 app.listen(port , () => {
     console.log("listening on port "+`${port}`);
