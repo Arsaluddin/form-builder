@@ -45,23 +45,29 @@ function Category() {
   };
 
   return (
-    <div>
-      <div className="flex space-x-4">
-        <button onClick={handleAddSourceItem} className="bg-blue-500 text-white px-4 py-2 rounded-md">
+    <div className="container mx-auto p-4">
+      <div className="flex justify-between mb-4">
+        <button
+          onClick={handleAddSourceItem}
+          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-500"
+        >
           Add Source Item
         </button>
-        <button onClick={handleAddTargetItem} className="bg-green-500 text-white px-4 py-2 rounded-md">
+        <button
+          onClick={handleAddTargetItem}
+          className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-500"
+        >
           Add Target Container
         </button>
       </div>
 
       <div className="flex">
         <div
-          className="w-40 h-40 border-2 border-dashed border-gray-400 m-1"
+          className="w-40 h-40 border-2 border-dashed border-gray-400 m-1 flex flex-col justify-center items-center"
           onDragOver={handleDragOver}
           onDrop={(event) => handleDrop(event, 'source-container')}
         >
-          <h3>Source</h3>
+          <h3 className="mb-2 text-lg font-semibold">Source</h3>
           {sourceItems.map((item) => (
             <div
               key={item.id}
@@ -77,11 +83,11 @@ function Category() {
         {targetContainers.map((container) => (
           <div
             key={container.id}
-            className="w-40 h-40 border-2 border-dashed border-gray-400 m-1"
+            className="w-40 h-40 border-2 border-dashed border-gray-400 m-1 flex flex-col justify-center items-center"
             onDragOver={handleDragOver}
             onDrop={(event) => handleDrop(event, container.id)}
           >
-            <h3>{container.id}</h3>
+            <h3 className="mb-2 text-lg font-semibold">{container.id}</h3>
             {container.items.map((item) => (
               <div
                 key={item.id}
