@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import QuestionTemplate from './QuestionTemplate';
+import { Link } from 'react-router-dom'
 
 function FormTemplate() {
   const [formName, setFormName] = useState('');
   const [questions, setQuestions] = useState([]);
 
   const handleAddQuestion = () => {
+      
     const newQuestion = {
-      id: new Date().getTime(), // Using timestamp as a unique ID
+      qid: new Date().getTime(), // Using timestamp as a unique ID
     };
     setQuestions([...questions, newQuestion]);
   };
@@ -48,8 +50,8 @@ function FormTemplate() {
         />
         {questions.map((question) => (
           <QuestionTemplate
-            key={question.id}
-            id={question.id}
+            key={question.qid}
+            id={question.qid}
             deleteField={handleDeleteQuestion}
           />
         ))}
@@ -59,12 +61,14 @@ function FormTemplate() {
         >
           Add Questions
         </button>
+        <Link to='/'>
         <button
           className="border border-blue-500 m-5 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-black-500"
           onClick={handleCreateForm}
         >
           Create Form
         </button>
+        </Link>
       </div>
     </div>
   );

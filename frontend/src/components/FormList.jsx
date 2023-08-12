@@ -28,7 +28,7 @@ function FormList() {
         {forms.map((form) => (
           <li key={form._id} className="border-b last:border-b-0">
             <a
-              href={`/form/${form._id}`}
+              href={`/forms/${form._id}`}
               className="block p-4 hover:bg-gray-100 transition duration-300"
             >
               {form.formName}
@@ -41,3 +41,4 @@ function FormList() {
 }
 
 export default FormList;
+ 
