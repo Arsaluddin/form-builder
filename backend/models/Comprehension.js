@@ -10,6 +10,7 @@ const questionSchema = new mongoose.Schema({
 });
 
 const comprehensionSchema = new mongoose.Schema({
+  id: String,
   passage: String,
   questions: [questionSchema],
 });

@@ -86,3 +86,4 @@ function Cloze() {
 }
 
 export default Cloze;
+ 

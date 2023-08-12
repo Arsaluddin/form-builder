@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const targetContainerSchema = new mongoose.Schema({
-  id: String,
+ 
   items: [
     {
       id: String,
@@ -11,6 +11,7 @@ const targetContainerSchema = new mongoose.Schema({
 });
 
 const CategorySchema = new mongoose.Schema({
+  
   sourceItems: [
     {
       id: String,
