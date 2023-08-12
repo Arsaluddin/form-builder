@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/form" element={<FormTemplate/>}/>
+          <Route path="/forms" element={<FormTemplate/>}/>
         </Routes>
       </BrowserRouter>
     </>
